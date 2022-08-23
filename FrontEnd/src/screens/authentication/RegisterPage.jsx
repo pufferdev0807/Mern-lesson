@@ -26,13 +26,7 @@ export default function RegisterPage() {
   const Register = () => {
     setIsLoding(true);
 
-    if (
-      firstName == "" ||
-      lastName == "" ||
-      userEmail == "" ||
-      userPassword == "" 
-      // userConfirmPassword == ""
-    ) {
+    if ( firstName == "" || lastName == "" || userEmail == "" || userPassword == "" ) {
       setIsLoding(false);
       toast.error("Please input all informations.");
       return;
@@ -43,7 +37,6 @@ export default function RegisterPage() {
       lastName: lastName,
       userEmail: userEmail,
       userPassword: userPassword,
-      // userConfirmPassword: userConfirmPassword,
     };
 
     axios
@@ -66,86 +59,6 @@ export default function RegisterPage() {
 
   return (
     <div className="RegisterPage overflow-hidden">
-      {/* <Container>
-        <Row className="justify-content-center align-items-center">
-          <Col lg={4} md={4} sm={12}>
-            <Card>
-              <Card.Body>
-                <Form>
-                  <Row>
-                    <Form.Group as={Col} md="6" controlId="validationCustom01">
-                      <Form.Label>First name</Form.Label>
-                      <Form.Control
-                        required
-                        type="text"
-                        placeholder="First name"
-                        value={firstName}
-                        onChange={(e) => {
-                          setFirstName(e.target.value);
-                        }}
-                      />
-                      <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group as={Col} md="6" controlId="validationCustom01">
-                      <Form.Label>Last name</Form.Label>
-                      <Form.Control
-                        required
-                        type="text"
-                        placeholder="Last name"
-                        value={lastName}
-                        onChange={(e) => {
-                          setLastName(e.target.value);
-                        }}
-                      />
-                    </Form.Group>
-                  </Row>
-                  <Row className="mt-3">
-                    <Form.Group as={Col} md="12" controlId="validationCustom01">
-                      <Form.Label>Email address</Form.Label>
-                      <Form.Control
-                        required
-                        type="email"
-                        placeholder="Email address"
-                        value={userEmail}
-                        onChange={(e) => {
-                          setUserEmail(e.target.value);
-                        }}
-                      />
-                    </Form.Group>
-                  </Row>
-                  <Row className="mt-3">
-                    <Form.Group as={Col} md="6" controlId="validationCustom01">
-                      <Form.Label>Password</Form.Label>
-                      <Form.Control
-                        required
-                        type="password"
-                        placeholder="Password"
-                        value={userPassword}
-                        onChange={(e) => setUserPassword(e.target.value)}
-                      />
-                    </Form.Group>
-                    <Form.Group as={Col} md="6" controlId="validationCustom01">
-                      <Form.Label>Confirm password</Form.Label>
-                      <Form.Control
-                        required
-                        type="password"
-                        placeholder="Confirm password"
-                        value={userConfirmPassword}
-                        onChange={(e) => setUserConfirmPassword(e.target.value)}
-                      />
-                    </Form.Group>
-                  </Row>
-                  <Row className="mt-3 d-flex justify-content-center align-items-center">
-                    <Col lg={6} md={6} sm={6}>
-                        {isLoding == true ? (<Button className="w-100" disabled><Spinner animation="grow" /></Button>) : (<Button className="w-100" onClick={Register}>Register</Button>)}                      
-                    </Col>
-                  </Row>
-                </Form>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container> */}
       <Row>
         <Col
           lg={6}
@@ -257,7 +170,7 @@ export default function RegisterPage() {
             backgroundSize: "cover",
           }}
         >
-          <Image src="/assets/images/logo.svg" className=""/>
+          <Image src="/assets/images/logo.svg"/>
         </Col>
       </Row>
       <ToastContainer />
