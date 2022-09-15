@@ -31,11 +31,11 @@ const RegisterValidation = {
             lastName : Joi.string().required(),
             userEmail : Joi.string().email().required(),
             userPassword : Joi.string().regex(/[a-zA-Z0-9]{3,30}/).required(),
-            userConfirmPassword : Joi.string().regex(/[a-zA-Z0-9]{3,30}/).required()
+            // userConfirmPassword : Joi.string().regex(/[a-zA-Z0-9]{3,30}/).required()
         })
 };
 
-router.post("/register", function (req, res, next) {
+router.post("/register", validate(RegisterValidation, {}, {}), function (req, res, next) {
     const data = req.body;
     console.log(data);
 });
